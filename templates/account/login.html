@@ -1,0 +1,14 @@
+
+
+
+
+<h1>Login screen</h1>
+{% load socialaccount %}
+
+<form method="post" action="{% provider_login_url "google" %}">
+    {% csrf_token %}
+    <button type="submit">Google</button>
+  </form>
+
+<a href="/accounts/signup">Sign UP</a>
+
