@@ -11,10 +11,17 @@
   <body>
     <h1>Login screen</h1>
     {% load socialaccount %}
+    
     <form method="post" action="{% provider_login_url "google" %}">
         {% csrf_token %}
         <button type="submit">Google</button>
     </form>
+    <br/>
+    <form method="post" action="{% provider_login_url "facebook" method="oauth2" %}">
+      {% csrf_token %}
+      <button type="submit">Facebook</button>
+  </form>
+
     <a href="/accounts/signup">Sign UP</a>
 
   </body>
