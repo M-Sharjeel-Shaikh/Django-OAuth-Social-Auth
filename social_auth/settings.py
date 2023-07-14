@@ -1,17 +1,10 @@
 from pathlib import Path
 import os
-import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-env = environ.Env(
-    # set casting, default value
-    DEBUG=(bool, True)
-)
 
-# Take environment variables from .env file
-environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -21,7 +14,7 @@ SECRET_KEY = 'django-insecure-&o$9f0e(-muae=teuu7teaad+j*la7n(9qa(mc!+@on8z#gx-7
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # False if not in os.environ because of casting above
-DEBUG = env('DEBUG')
+DEBUG=True
 
 
 ALLOWED_HOSTS = []
@@ -147,8 +140,8 @@ SOCIALACCOUNT_PROVIDERS = {
         # (``socialaccount`` app) containing the required client
         # credentials, or list them here:
         'APP': {
-            'client_id': env('Client_ID'),
-            'secret': env('SECRET_KEY'),
+            'client_id': 'client id here ',
+            'secret': 'Client secret key here',
         }
     }
 }
